@@ -1,0 +1,95 @@
+#include<stdio.h>
+#define N 5
+int stack[N];
+int top = -1;
+void main()
+{
+void push();
+void pop();
+void peek();
+void display();
+int choice;
+do
+{
+printf("----- Implementation Of Stack Using Arrays -----\n");
+printf("\t1 - Push\n");
+printf("\t2 - Pop\n");
+printf("\t3 - Peek\n");
+printf("\t4 - Display\n");
+printf("\t0 - Exit\n");
+printf("Your Choice :- \t");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:
+push();
+break;
+case 2:
+pop();
+break;
+case 3:
+peek();
+break;
+case 4:
+display();
+break;
+case 0:
+break;
+default:
+printf("\t---Invalid choice---\n");
+}
+printf("\n\n");
+}
+while(choice!=0);
+}
+void push()
+{
+int num;
+printf("\nEnter the element to push in the array :- \t");
+scanf("%d",&num);
+if(top == N-1)
+{
+printf("\tError! Overflow, Element cannot be inserted\n");
+}
+else
+{
+top++;
+stack[top] = num;
+printf("\tElement pushed into the array sucessfully\n");
+}
+}
+void pop()
+{
+int delNum;
+if(top == -1)
+{
+printf("\tUnderflow, Cannot be deleted\n");
+}
+else
+{
+delNum = stack[top];
+top--;
+printf("\tPopped element is %d\n",delNum);
+}
+}
+void peek()
+{
+if(top == -1)
+{
+printf("\tStack is empty\n");
+}
+else
+{
+printf("\tTop most element is %d\n",stack[top]);
+}
+}
+void display()
+{
+int i;
+printf("Elements of stack are :-\n");
+for(i=top; i>=0; i--)
+{
+printf("\t%d\n",stack[i]);
+}
+printf("\n");
+}
