@@ -1,0 +1,58 @@
+#include<stdio.h>
+void display(int arr[], int size)
+{
+int i;
+for(i=size; i>0; i--)
+{
+if(arr[i] != 0)
+{
+printf("%d x^%d + ",arr[i],i);
+}
+}
+printf("%d\n",arr[0]);
+}
+void main()
+{
+int q1[10], q2[10], result[10];
+int term1, term2, degree, coeff;
+int i;
+for(i=0; i<10; i++)
+{
+q1[i] = 0;
+q2[i] = 0;
+}
+printf("Number of terms in q1 :- \t");
+scanf("%d",&term1);
+printf("Number of terms in q2 :- \t");
+scanf("%d",&term2);
+printf("----- Quadratic Equation 1 -----\n");
+for(i=0; i<term1; i++)
+{
+printf("\tDegree of term %d :- \t", i+1);
+scanf("%d",&degree);
+printf("\tCoefficient of term %d :- \t",i+1);
+scanf("%d",&coeff);
+printf("\n");
+q1[degree] = coeff;
+}
+printf("-----Quadratic Equation 2 -----\n");
+for(i=0; i<term2; i++)
+{
+printf("\tDegree of term %d :- \t", i+1);
+scanf("%d",&degree);
+printf("\tCoefficient of term %d :- \t",i+1);
+scanf("%d",&coeff);
+printf("\n");
+q2[degree] = coeff;
+}
+for(i=0; i<10; i++)
+{
+result[i] = q1[i]+q2[i];
+}
+printf("Polynomial 1 :- ");
+display(q1,9);
+printf("Polynomial 2 :- ");
+display(q2,9);
+printf("The sum of these two polynomials are :- ");
+display(result,9);
+}
