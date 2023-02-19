@@ -1,0 +1,65 @@
+#include<stdio.h>
+void main()
+{
+int mat[10][10];
+int r, c, i, j, triplet[10][3], nonZero = 0, k=0;
+printf("Enter rows :- \t");
+scanf("%d",&r);
+printf("Enter columns :- \t");
+scanf("%d",&c);
+mat[r][c];
+printf("Enter the elements :- \n");
+for(i=0; i<r; i++)
+{
+for(j=0; j<c; j++)
+{
+scanf("%d",&mat[i][j]);
+if(mat[i][j] != 0)
+{
+nonZero++;
+}
+}
+}
+triplet[nonZero][3];
+for(i=0; i<r; i++)
+{
+for(j=0; j<c; j++)
+{
+if(mat[i][j] != 0)
+{
+triplet[k][0] = i;
+triplet[k][1] = j;
+triplet[k][2] = mat[i][j];
+k++;
+}
+}
+}
+printf("The given Matrix is :- \n");
+for(i=0; i<r; i++)
+{
+for(j=0; j<c; j++)
+{
+printf("%d\t",mat[i][j]);
+}
+printf("\n");
+}
+printf("\n");
+if( (r*c) - nonZero > (r*c)/2)
+{
+printf("The given matrix is a sparse matrix\n");
+printf("New Matrix Representation :- \n");
+printf("Row\tColumn\tValue\n");
+for(i=0; i<nonZero; i++)
+{
+for(j=0; j<3; j++)
+{
+printf("%d \t",triplet[i][j]);
+}
+printf("\n");
+}
+}
+else
+{
+printf("The given matrix is not a sparse matrix\n");
+}
+}
